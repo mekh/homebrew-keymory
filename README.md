@@ -29,14 +29,17 @@ This repository contains **just the Homebrew cask** for installing Keymory. Ther
 ## ⬇️ Install
 
 ```sh
-brew tap mekh/keymory
-brew install --cask keymory
+brew install --cask mekh/keymory/keymory
 ```
 
-Or in one line:
+That single command taps the repo and installs — **no `brew trust` step needed**. Naming the cask in full implicitly trusts just this one cask; Homebrew 6+ otherwise treats third-party taps as untrusted.
+
+Prefer to tap first? Then the short name needs a one-time trust:
 
 ```sh
-brew install --cask mekh/keymory/keymory
+brew tap mekh/keymory
+brew trust mekh/keymory          # one-time; Homebrew 6+ requires trusting third-party taps
+brew install --cask keymory
 ```
 
 On first launch, look for the language indicator in your menu bar. To follow pop-up windows too, open the menu, turn on **Track All Windows**, and grant **Accessibility** when prompted (System Settings ▸ Privacy & Security ▸ Accessibility). Turn on **Launch at Login** and let Keymory disappear into the background.
